@@ -1,0 +1,6 @@
+# Allowed connection form outside of the container
+network.host: 0.0.0.0
+# Authentication disabled
+xpack.security.enabled: false
+
+
