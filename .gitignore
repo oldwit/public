@@ -1,2 +1,3 @@
 utils/openssl/files/
 utils/ansible/files/
+utils/elasticsearch/data
