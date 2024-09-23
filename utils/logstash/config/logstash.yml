@@ -1,0 +1,8 @@
+api.http.host: "0.0.0.0"
+# Xpack Elasticserach configuration related
+xpack.monitoring.enabled: false
+xpack.monitoring.elasticsearch.hosts: [ "http://elasticsearch.util:9200" ]
+# Autoreloading logsatsh config in case of changing patterns
+path.config: /usr/share/logstash/pipeline
+config.reload.automatic: True
+config.reload.interval: 5s
