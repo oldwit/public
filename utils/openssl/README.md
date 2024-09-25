@@ -9,14 +9,14 @@ Witold Krak, emial: witold.krak@gmail.com
 
 ## Build script
 
-To Build the OpenSSL utility docker container, execute the following script:
+To Build openSSL docker image, execute the following script:
 ```bash
 ./build.sh
 ```
 
 ## Run script
 
-To run the OpenSSL utility docker container, execute the following script:
+To run openSSL docker container, execute the following script:
 ```bash
 ./run.sh
 ```

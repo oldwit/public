@@ -16,7 +16,7 @@ To build ansible docker image, execute the following script:
 
 ## Run
 
-To run ansible docker image, execute the following script:
+To run ansible docker container, execute the following script:
 ```bash
 ./run.sh
 ```
