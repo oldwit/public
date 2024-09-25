@@ -1,17 +1,24 @@
 # OpenSSL util
 
-## Author: 
+## Author
 Witold Krak, emial: witold.krak@gmail.com
 
-## Prerequisites:
+## Prerequisites
 
 - [docker](https://docs.docker.com/) installed
 
-## Run script:
+## Build script
 
-To access the OpenSSL utility inside the Docker container, run the following script:
+To Build the OpenSSL utility docker container, execute the following script:
 ```bash
-./start.sh
+./build.sh
+```
+
+## Run script
+
+To run the OpenSSL utility docker container, execute the following script:
+```bash
+./run.sh
 ```
 
 ## Encrypting
