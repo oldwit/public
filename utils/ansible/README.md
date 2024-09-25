@@ -1,17 +1,24 @@
 # Ansible util
 
-## Author: 
+## Author 
 Witold Krak, emial: witold.krak@gmail.com
 
-## Prerequisites:
+## Prerequisites
 
 - [docker](https://docs.docker.com/) installed
 
-## Run script:
+## Build
 
-To access the Ansible utility inside the Docker container, run the following script:
+To build ansible docker image, execute the following script:
 ```bash
-./start.sh
+./build.sh
+```
+
+## Run
+
+To run ansible docker container, execute the following script:
+```bash
+./run.sh
 ```
 
 ## Exit
