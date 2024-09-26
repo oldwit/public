@@ -1,0 +1,45 @@
+version: "2"
+services: 
+  elasticsearch:
+    image: elasticsearch.util
+    environment: 
+      - "discovery.type=single-node" 
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m" 
+    ports: 
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - "./elasticsearch/data:/usr/share/elasticsearch/data"
+    networks:
+      - "util"
+    restart: "no"
+    container_name: "elasticsearch.util"
+
+  logstash:
+    image: "logstash.util"
+    ports: 
+      - "5044:5044"
+      - "9600:9600"
+      - "8080:8080"
+    volumes: 
+      - "./logstash/pipeline:/usr/share/logstash/pipeline/"
+    networks:
+      - "util"
+    restart: "no"
+    container_name: "logstash.util"
+
+  kibana:
+    image: "kibana.util"
+    environment: 
+      - "ELASTICSEARCH_HOSTS='http://elasticsearch.util:9200'"
+    ports:
+      - "5601:5601"
+    networks: 
+      - "util"
+    restart: "no"
+    container_name: "kibana.util"
+
+
+networks:
+  util:
+    driver: "bridge"
