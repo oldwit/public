@@ -1,6 +1,9 @@
 version: "2"
 services: 
   elasticsearch:
+    build:
+      context: ./elasticsearch
+      dockerfile: Dockerfile
     image: elasticsearch.util
     environment: 
       - "discovery.type=single-node" 
@@ -16,6 +19,9 @@ services:
     container_name: "elasticsearch.util"
 
   logstash:
+    build:
+      context: ./logstash
+      dockerfile: Dockerfile
     image: "logstash.util"
     ports: 
       - "5044:5044"
@@ -29,6 +35,9 @@ services:
     container_name: "logstash.util"
 
   kibana:
+    build:
+      context: ./kibana
+      dockerfile: Dockerfile
     image: "kibana.util"
     environment: 
       - "ELASTICSEARCH_HOSTS='http://elasticsearch.util:9200'"
