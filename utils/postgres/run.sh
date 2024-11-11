@@ -7,7 +7,7 @@ echo -e "\e[32mNetwork $NETWORK_NAME has been created.\e[0m" || \
 echo -e "\e[33mNetwork $NETWORK_NAME already exists.\e[0m"
 docker run -d \
     -e POSTGRES_USER=postgres \
-    -e POSTGRES_PASSWORD=password \
+    -e POSTGRES_PASSWORD=postgres \
     -e PGDATA=/var/lib/postgresql/data/pgdata \
     -p 50001:5432 \
     -v /home/oldwit/Projects/tools/utils/postgres/data:/var/lib/postgresql/data \
