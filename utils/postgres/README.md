@@ -35,7 +35,7 @@ psql -U postgres -p password
 
 ## Login to postgres db
 
-To login to postgres container, execute the following command:
+To login to postgres db, execute the following command:
 
 ```bash
 psql postgresql://<username>:<password>@<host>:<port>/<database>
