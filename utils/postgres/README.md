@@ -30,7 +30,7 @@ docker exec -it postgres.util /bin/bash
 
 In order to login to postgres db from within postgres.util container: 
 ```bash
-psql -U postgres -p password
+psql -U <username> -p <password>
 ```
 
 ## Login to postgres db
