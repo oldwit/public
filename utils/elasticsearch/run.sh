@@ -1,7 +1,7 @@
 #!/bin/bash
 NAME="elasticsearch.util"
 NETWORK_NAME="util"
-VOLUME_NAME="elasticsearch"
+VOLUME_NAME="elasticsearch.util"
 echo -e "\e[32m$NAME run script started.\e[0m" && \
 docker network create $NETWORK_NAME && \
 echo -e "\e[32mNetwork $NETWORK_NAME has been created.\e[0m" || \

@@ -12,7 +12,7 @@ services:
       - "50010:9200"
       - "50011:9300"
     volumes:
-      - "elasticsearch:/usr/share/elasticsearch/data"
+      - "elasticsearch.util:/usr/share/elasticsearch/data"
     networks:
       - "util"
     restart: "no"
@@ -54,4 +54,4 @@ networks:
     driver: "bridge"
 
 volumes:
-  elasticsearch:
+  elasticsearch.util:
