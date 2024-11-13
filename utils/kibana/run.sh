@@ -1,20 +1,13 @@
 #!/bin/bash
-NAME="elasticsearch.util"
+NAME="kibana.util"
 NETWORK_NAME="util"
-VOLUME_NAME="elasticsearch.util"
 echo -e "\e[32m$NAME run script started.\e[0m" && \
 docker network create $NETWORK_NAME && \
 echo -e "\e[32mNetwork $NETWORK_NAME has been created.\e[0m" || \
 echo -e "\e[33mNetwork $NETWORK_NAME already exists.\e[0m"
-docker volume create $VOLUME_NAME && \
-echo -e "\e[32mVolume $VOLUME_NAME has been created.\e[0m" || \
-echo -e "\e[33mVolume $VOLUME_NAME already exists.\e[0m"
 docker run -d \
-    -e "discovery.type=single-node" \
-    -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
-    -p 50010:9200 \
-    -p 50011:9300 \
-    -v $VOLUME_NAME:/usr/share/elasticsearch/data \
+    -p 50030:5601 \
+    -e ELASTICSEARCH_HOSTS="http://elasticsearch.util:50010" \
     --rm \
     --network=$NETWORK_NAME \
     --name=$NAME \
