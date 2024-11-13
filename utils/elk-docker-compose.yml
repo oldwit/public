@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services: 
   elasticsearch:
     build:
@@ -55,3 +55,4 @@ networks:
 
 volumes:
   elasticsearch.util:
+    external: true

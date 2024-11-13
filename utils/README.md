@@ -6,6 +6,7 @@ Witold Krak, emial: witold.krak@gmail.com
 ## Prerequisites
 
 - [docker](https://docs.docker.com/) installed
+- docker volume elasticsearch.util need to be created before starting docker-compose if is not already created.
 
 ## Up
 
