@@ -8,8 +8,8 @@ FROM kibana:8.15.1
 # If you need to copy additional config files or customizations
 # COPY ./config/kibana.yml /usr/share/kibana/config/kibana.yml
 
-# Expose the default Kibana port
-EXPOSE 5601
+# Expose the default Kibana port (5601 - 50030)
+EXPOSE 50030
 
 # Start Kibana
 CMD ["bin/kibana"]
