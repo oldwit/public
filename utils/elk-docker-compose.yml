@@ -9,10 +9,10 @@ services:
       - "discovery.type=single-node" 
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m" 
     ports: 
-      - "9200:9200"
-      - "9300:9300"
+      - "50010:9200"
+      - "50011:9300"
     volumes:
-      - "./elasticsearch/data:/usr/share/elasticsearch/data"
+      - "elasticsearch:/usr/share/elasticsearch/data"
     networks:
       - "util"
     restart: "no"
@@ -24,9 +24,9 @@ services:
       dockerfile: Dockerfile
     image: "logstash.util"
     ports: 
-      - "5044:5044"
-      - "9600:9600"
-      - "8080:8080"
+      - "50020:5044"
+      - "50021:9600"
+      - "50022:8080"
     volumes: 
       - "./logstash/pipeline:/usr/share/logstash/pipeline/"
     networks:
@@ -40,9 +40,9 @@ services:
       dockerfile: Dockerfile
     image: "kibana.util"
     environment: 
-      - "ELASTICSEARCH_HOSTS='http://elasticsearch.util:9200'"
+      - "ELASTICSEARCH_HOSTS='http://elasticsearch.util:50030'"
     ports:
-      - "5601:5601"
+      - "50030:5601"
     networks: 
       - "util"
     restart: "no"
@@ -52,3 +52,6 @@ services:
 networks:
   util:
     driver: "bridge"
+
+volumes:
+  elasticsearch:
